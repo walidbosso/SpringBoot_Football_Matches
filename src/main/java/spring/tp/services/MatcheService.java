@@ -24,25 +24,25 @@ public class MatcheService {
 	@Autowired 
 	MatcheRepository mr;
 	
-		public List<Matche> getAllMatches(){
+	public List<Matche> getAllMatches(){
 		return mr.findAll();
 	}
 	
-		public Matche getMatcheById( Long id) {
+	public Matche getMatcheById( Long id) {
 		return mr.findById(id).get(); 
 	}
 	
 	public Stade getStadeByMatcheId( Long id) {
-	return mr.findById(id).get().getStade(); 
+		return mr.findById(id).get().getStade(); 
 }
 	public List<Equipe> getEquipesByMatcheId( Long id) {
 		List<Equipe> equipes=new ArrayList<>() ;
 		
-	Equipe equipe1 = mr.findById(id).get().getEquipe1(); 
-	equipes.add(equipe1);
-	Equipe equipe2 = mr.findById(id).get().getEquipe2();
-	equipes.add(equipe2);
-	return equipes;
+		Equipe equipe1 = mr.findById(id).get().getEquipe1(); 
+		equipes.add(equipe1);
+		Equipe equipe2 = mr.findById(id).get().getEquipe2();
+		equipes.add(equipe2);
+		return equipes;
 	
 }
 	

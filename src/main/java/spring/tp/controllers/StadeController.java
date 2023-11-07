@@ -11,66 +11,52 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.persistence.EntityNotFoundException;
 import spring.tp.entities.Stade;
 import spring.tp.entities.Matche;
-import spring.tp.repositories.StadeRepository;
-import spring.tp.repositories.MatcheRepository;
+import spring.tp.services.StadeService;
 
 @RestController
 public class StadeController {
 
 	@Autowired
-	StadeRepository sr;
-	@Autowired
-	MatcheRepository mr;
+	StadeService ss;
 	
 	@PostMapping("stade")
 	public Stade addStade(@RequestBody Stade g) {
-	return sr.save(g);
+	return ss.addStade(g);
 	}
 	
 	@GetMapping("stade")
 	List<Stade> getAllStades(){
-	return sr.findAll();
+	return ss.getAllStades();
 	}
 	
 	
 	@GetMapping("stade/{id}")
 	public Stade getStadeById(@PathVariable Long id) {
-	return sr.findById(id).get(); 
+	return ss.getStadeById(id);
 	
 	}
 	
 	@GetMapping("stade/{id}/matche")
 	public List<Matche> getMatcheByStadeId(@PathVariable Long id) {
-	Stade g = sr.findById(id).get();
-	//we pass that group 
-	return mr.findByStade(g); 
+	
+	return ss.getMatcheByStadeId(id);
 	}
 	
 	@PostMapping("stade/{id}/matche/{id2}")
 	public Matche addMatcheTostade(@PathVariable Long id, @RequestBody Matche m, @PathVariable Long id2) {
-		Stade e= sr.findById(id).orElseThrow(() -> new EntityNotFoundException("stade not found"));
-		Matche m2= mr.findById(id2).orElse(null);
-		//System.out.println(m2);
-		if(m2==null) {m.setStade(e); return mr.save(m);}
-		else {m2.setStade(e);
-		return mr.save(m2);}
+		return ss.addMatcheTostade(id, m, id2);
 	}
 	
 	@DeleteMapping("stade/{id}")
 	public void deleteStade(@PathVariable Long id) {
-	List<Matche> matches=getMatcheByStadeId(id); 
-	matches.forEach(m->{//expression lambda
-	m.setStade(null);
-	});
-	sr.deleteById(id);
+	ss.deleteStade(id);
 	}
 	
 	@PutMapping("stade")
 	public Stade updateStade(@RequestBody Stade s) {
-	return sr.save(s);
+	return ss.updateStade(s);
 	}
 	
 }

@@ -11,30 +11,30 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import spring.tp.repositories.JoueurRepository;
+import spring.tp.services.JoueurService;
 import spring.tp.entities.Joueur;
 
 @RestController
 public class JoueurController {
 
 	@Autowired 
-	JoueurRepository jr;
+	JoueurService ss;
 	
 	@GetMapping("joueur")
 	public List<Joueur> getAllJoueurs(){
-		return jr.findAll();
+		return ss.getAllJoueurs();
 	}
 	@PostMapping("joueur")
 	public Joueur addJoueur(@RequestBody Joueur s) {
-		return jr.save(s);
+		return ss.addJoueur(s);
 	}
 	@DeleteMapping("joueur/{id}")
 	public void deleteJoueur(@PathVariable Long id) {
-		jr.deleteById(id);
+		ss.deleteJoueur(id);
 	}
 	@PutMapping("joueur")
 	public Joueur updateJoueur(@RequestBody Joueur s) {
-		return jr.save(s);
+		return ss.updateJoueur(s);
 	}
 	}
 
