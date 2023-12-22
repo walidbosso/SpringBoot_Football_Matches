@@ -63,6 +63,7 @@ Academic project, Master's in Computer Science Engineering.
 - **PHPMyAdmin:** Web-based tool for managing MySQL databases.
 
 ## Usage
+- Fork then Clone the repository.
 
 - Open it on STS IDE after instaling it, Maven will build the necessary tools, use `POSTMAN` for testing.
 
