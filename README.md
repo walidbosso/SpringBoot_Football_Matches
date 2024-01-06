@@ -9,6 +9,10 @@
   
   [![GitHub WidgetBox](https://github-widgetbox.vercel.app/api/profile?username=walidbosso&data=followers,repositories,stars,commits&theme=nautilus)](https://github.com/walidbosso/SpringBoot_Football_Matches)
 
+ <p align="center">
+<a href="https://github.com/walidbosso/SpringBoot_Football_Matches">
+<img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fwalidbosso%2FSpringBoot_Football_Matches&label=Project%20views&countColor=%23263759&style=flat-square&labelStyle=none" /></a>
+</p>
 
 <a href="https://github.com/walidbosso/SpringBoot_Football_Matches">
   <img src="https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif" width="60%"/>
@@ -59,6 +63,7 @@ Academic project, Master's in Computer Science Engineering.
 - **PHPMyAdmin:** Web-based tool for managing MySQL databases.
 
 ## Usage
+- Fork then Clone the repository.
 
 - Open it on STS IDE after instaling it, Maven will build the necessary tools, use `POSTMAN` for testing.
 
