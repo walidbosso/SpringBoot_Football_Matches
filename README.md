@@ -9,6 +9,7 @@
   
   [![GitHub WidgetBox](https://github-widgetbox.vercel.app/api/profile?username=walidbosso&data=followers,repositories,stars,commits&theme=nautilus)](https://github.com/walidbosso/SpringBoot_Football_Matches)
 
+
  <p align="center">
 <a href="https://github.com/walidbosso/SpringBoot_Football_Matches">
 <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fwalidbosso%2FSpringBoot_Football_Matches&label=Project%20views&countColor=%23263759&style=flat-square&labelStyle=none" /></a>
@@ -77,9 +78,8 @@ Academic project, Master's in Computer Science Engineering.
 > >  <br/> &copy; *by Walid BOUSSOU*   🇲🇦 😄 <br/>  
 ----------------------
 
-<details>
-
-<summary>👏 Thanks for the support </summary>
+<details open disabled>
+<summary >👏 Thanks for the support </summary>
 
 ## Stargazers
 
